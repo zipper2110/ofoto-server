@@ -22,7 +22,7 @@ exports.getSubscriberStatus = (request, response) => {
     const {subscriberId} = request.params;
 
     const subscriber = subscriberRepository.get(subscriberId);
-    
+
     if (!subscriber) {
         response.json({id: subscriberId, status: Subscriber.statuses.UNKNOWN});
         return;
@@ -35,6 +35,4 @@ exports.getSubscribersNearby = (request, response) => {
     const { latitude, longitude } = request.body;
     const nearbySubscribers = subscriberRepository.getNearbySubscribers(latitude, longitude);
     response.json({ nearbySubscribers });
-}
-
-
+};

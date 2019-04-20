@@ -7,7 +7,6 @@ module.exports = (app) => {
     app.route("/status/:subscriberId")
     .post(controller.getSubscriberStatus);
 
-    
     app.route("/nearby")
     .post(controller.getSubscribersNearby);
-}
+};
